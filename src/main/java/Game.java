@@ -15,8 +15,8 @@ public class Game {
 
     Game(int playersNumber){
         this.playersNumber = playersNumber;
-        players = new ArrayList<Player>();
-        this.progressTokens =new ProgressTokens();
+        this.players = new ArrayList<>();
+        this.progressTokens = new ProgressTokens();
 
         for(int i = 0; i < playersNumber; i++){
             players.add(new Player());
@@ -34,20 +34,15 @@ public class Game {
     }
 
     static Card makeCard(CardType cardType, CardBack centralDeck) {
-        switch (cardType.cardCategory){
-            case MaterialCard:
-                return new MaterialCard(cardType, centralDeck);
-            case ProgressCard:
-                return new ProgressCard(cardType, centralDeck);
-            case WarCard:
-                return new WarCard(cardType, centralDeck);
-            case PoliticCard:
-                return new PoliticCard(cardType, centralDeck);
-        }
-        return null;
+        return switch (cardType.cardCategory) {
+            case MaterialCard -> new MaterialCard(cardType, centralDeck);
+            case ProgressCard -> new ProgressCard(cardType, centralDeck);
+            case WarCard -> new WarCard(cardType, centralDeck);
+            case PoliticCard -> new PoliticCard(cardType, centralDeck);
+        };
     }
 
-    static void shuffleCards(List deck) {
+    static void shuffleCards(List<Card> deck) {
         Collections.shuffle(deck);
     }
 
