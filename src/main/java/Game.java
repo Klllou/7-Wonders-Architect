@@ -1,4 +1,5 @@
 import fr.isep.game7WonderArch.domain.*;
+import fr.isep.game7WonderArch.domain.card.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,11 +19,32 @@ public class Game {
         this.progressTokens =new ProgressTokens();
 
         for(int i = 0; i < playersNumber; i++){
-            Player player = new Player();
-            player.SetWonder();
-            players.add(player);
+            players.add(new Player());
         }
-//        TODO do central deck and shuffle it.
+        setCentralDeck();
+        shuffleCards(this.centralDeck);
+    }
+
+    void setCentralDeck(){
+        for(CardDecks.CardTypeQuantity a: CardDecks.deckCardQuantities_Extra){
+            for(int i = 0; i < a.quantity; i++){
+                centralDeck.add(makeCard(a.cardType, CardBack.CentralDeck));
+            }
+        }
+    }
+
+    static Card makeCard(CardType cardType, CardBack centralDeck) {
+        switch (cardType.cardCategory){
+            case MaterialCard:
+                return new MaterialCard(cardType, centralDeck);
+            case ProgressCard:
+                return new ProgressCard(cardType, centralDeck);
+            case WarCard:
+                return new WarCard(cardType, centralDeck);
+            case PoliticCard:
+                return new PoliticCard(cardType, centralDeck);
+        }
+        return null;
     }
 
     static void shuffleCards(List deck) {

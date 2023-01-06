@@ -1,4 +1,4 @@
-package fr.isep.game7WonderArch.domain;
+package fr.isep.game7WonderArch.domain.card;
 
 import java.util.Arrays;
 import java.util.List;

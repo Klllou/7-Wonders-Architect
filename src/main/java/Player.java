@@ -1,17 +1,24 @@
-import fr.isep.game7WonderArch.domain.*;
+import fr.isep.game7WonderArch.domain.card.Card;
+import fr.isep.game7WonderArch.domain.card.CardBack;
+import fr.isep.game7WonderArch.domain.card.CardDecks;
+import fr.isep.game7WonderArch.domain.wonder.Wonders;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Player {
 
-    Wonder wonder;
+    Wonders wonders;
     List<Card> deck;
 
-    void setDeck(){
+    Player(){
+        SetWonder();
+        SetDeck();
+    }
+
+    void SetDeck(){
         List<CardDecks.CardTypeQuantity> cardTypeQuantity = null;
         CardBack cardBack = null;
-        switch (wonder){
+        switch (wonders){
             case Gizeh:
                 cardTypeQuantity = CardDecks.deckCardQuantities_Gizeh;
                 cardBack = CardBack.Gizeh;
@@ -42,7 +49,7 @@ public class Player {
         }
         for(CardDecks.CardTypeQuantity a: cardTypeQuantity){
             for(int i = 0; i < a.quantity; i++){
-                deck.add(new Card(a.cardType, cardBack));
+                deck.add(Game.makeCard(a.cardType, cardBack));
             }
         }
         Game.shuffleCards(this.deck);

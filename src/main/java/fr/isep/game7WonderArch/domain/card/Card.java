@@ -1,6 +1,6 @@
-package fr.isep.game7WonderArch.domain;
+package fr.isep.game7WonderArch.domain.card;
 
-public class Card {
+public abstract class Card {
 
 	public final CardType type;
 	public final CardBack back;

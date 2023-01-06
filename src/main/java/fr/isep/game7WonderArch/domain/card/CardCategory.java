@@ -1,4 +1,4 @@
-package fr.isep.game7WonderArch.domain;
+package fr.isep.game7WonderArch.domain.card;
 
 public enum CardCategory {
 

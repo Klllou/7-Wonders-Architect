@@ -1,6 +1,6 @@
-package fr.isep.game7WonderArch.domain;
-
-public enum Wonder {
+package fr.isep.game7WonderArch.domain.wonder;
+//extends Wonder
+public enum Wonders {
 
 	Alexandrie("Alexandrie", "Alexandrie", //
 			"Prenez la première carte d'une pioche au choix, n'importe où sur la table, et posez-la devant vous"),
@@ -34,7 +34,7 @@ public enum Wonder {
 	
 	// ------------------------------------------------------------------------
 	
-	Wonder(String displayName, String frenchName, String effectDescription) {
+	Wonders(String displayName, String frenchName, String effectDescription) {
 		this.displayName = displayName;
 		this.frenchName = frenchName;
 		this.effectDescription = effectDescription;
