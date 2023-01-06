@@ -22,20 +22,12 @@ public class Game {
             player.SetWonder();
             players.add(player);
         }
-//        shuffleCards();
+//        TODO do central deck and shuffle it.
     }
 
-
-//    public void shuffleCards() {
-//        Collections.shuffle(CardDecks.deckCardQuantities_Extra);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Alexandrie);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Halicarnasse);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Babylone);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Ephese);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Olympie);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Rhodes);
-//        Collections.shuffle(CardDecks.deckCardQuantities_Gizeh);
-//    }
+    static void shuffleCards(List deck) {
+        Collections.shuffle(deck);
+    }
 
     void Play(){
         while(gameIsGoing){
