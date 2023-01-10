@@ -1,0 +1,79 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+class Game
+class Player
+
+
+package fr.isep.game7WonderArch.domain {
+enum Wonder
+abstract Wonder
+abstract Card
+enum CardBack
+enum CardCategory
+class CardDecks
+enum CardType
+enum Material
+enum ProgressToken
+class ProgressTokens
+enum ScienceCategory
+class PoliticCard
+class ProgressCard
+class MaterialCard
+class WarCard
+
+class Alexandrie
+class Babylone
+class Ephese
+class Gizeh
+class Halicarnasse
+class Olympie
+class Rhodes
+
+
+Card <|-- ProgressCard
+Card <|-- MaterialCard
+Card <|-- PoliticCard
+Card <|-- WarCard
+
+Card --- CardBack
+Card --- CardType
+CardType -- CardCategory
+
+Wonder <|-- Alexandrie
+Wonder <|-- Babylone
+Wonder <|-- Ephese
+Wonder <|-- Gizeh
+Wonder <|-- Halicarnasse
+Wonder <|-- Olympie
+Wonder <|-- Rhodes
+
+Player *-- Card
+Player *--- Wonder
+
+}
+Game *-- Player
+Game *-- CardDecks
+Game *-- ProgressTokens
+Player *-- ProgressTokens
+CardDecks *--- Card
+Game o--r InputParser
+
+ProgressTokens --- ProgressToken
+MaterialCard -- Material
+ProgressCard -- ScienceCategory
+
+package utils {
+interface InputParser
+class ControleParser
+class GUIParser
+
+InputParser <|.. ControleParser
+InputParser <|.. GUIParser
+
+}
+
+
+@enduml
