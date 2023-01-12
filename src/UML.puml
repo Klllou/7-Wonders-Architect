@@ -55,12 +55,11 @@ Player *--- Wonder
 
 }
 Game *-- Player
-Game *-- CardDecks
+Game *-- Card
 Game *-- ProgressTokens
 Player *-- ProgressTokens
-CardDecks *--- Card
+CardType *--- CardDecks
 Game o--r InputParser
-
 ProgressTokens --- ProgressToken
 MaterialCard -- Material
 ProgressCard -- ScienceCategory
