@@ -60,6 +60,8 @@ public class Player {
     }
 
     public void ChooseCard() {
-        //TODO
+        //TODO ChooseCard
+        Card choosenCard = null;//GUI input
+        this.deck.add(choosenCard);
     }
 }
