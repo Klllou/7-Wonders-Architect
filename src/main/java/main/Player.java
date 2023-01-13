@@ -103,4 +103,8 @@ public class Player {
     public void takeToken() {
         //TODO GUI
     }
+    public boolean hasEnoughResources(){
+        //TODO
+    }
+
 }

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
+
 public class Game {
 
     int playersNumber;
@@ -20,6 +22,7 @@ public class Game {
         this.players = new ArrayList<>();
         this.progressTokens = new ProgressTokens();
 
+        shuffleProgressToken(TOKENS);
         for(int i = 0; i < playersNumber; i++){
             players.add(new Player());
         }
@@ -46,6 +49,9 @@ public class Game {
 
     static public void shuffleCards(List<Card> deck) {
         Collections.shuffle(deck);
+    }
+    static public void shuffleProgressToken(List<ProgressToken> tokens) {
+        Collections.shuffle(tokens);
     }
 
     void Play(){

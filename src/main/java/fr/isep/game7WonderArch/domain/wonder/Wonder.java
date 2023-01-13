@@ -13,6 +13,9 @@ public abstract class Wonder {
         SetLayers();
     }
 
+    public getLayer(){
+        //TODO
+    }
     protected abstract void SetLayers();
 
 
