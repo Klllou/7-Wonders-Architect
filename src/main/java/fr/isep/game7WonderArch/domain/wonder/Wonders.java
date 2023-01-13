@@ -13,7 +13,7 @@ public enum Wonders {
 			"Prenez la première carte de la pioche centrale et posez-la devant vous"),
 	
 	Olympie("Olympie", "Olympie", //
-			"Prenez la première carte de la pioche à votre cauche et de celle à votre droite, et posez-les devant vous"),
+			"Prenez la première carte de la pioche à votre gauche et de celle à votre droite, et posez-les devant vous"),
 	
 	Babylone("Babylone", "Babylone", //
 			"Choisissez 1 jeton Progrès parmi les 4 disponibles, et posez-le devant vous"),

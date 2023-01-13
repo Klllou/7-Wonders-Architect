@@ -1,18 +1,29 @@
+package main;
+
 import fr.isep.game7WonderArch.domain.card.Card;
 import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
+import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import fr.isep.game7WonderArch.domain.wonder.Wonders;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Player {
 
+    public Map<ScienceCategory, Integer> symbolsScience;
     Wonders wonders;
     List<Card> deck;
-
-    Player(){
+    private Boolean hasCat;
+    private int victoryPoints;
+    public Player(){
         SetWonder();
-        SetDeck();
+        //SetDeck();
+        this.symbolsScience = new HashMap<>();
+        this.symbolsScience.put(ScienceCategory.Law, 0);
+        this.symbolsScience.put(ScienceCategory.Architect, 0);
+        this.symbolsScience.put(ScienceCategory.Mechanic, 0);
     }
 
     void SetDeck(){
@@ -52,14 +63,49 @@ public class Player {
                 deck.add(Game.makeCard(a.cardType, cardBack));
             }
         }
-        Game.shuffleCards(this.deck);
+        Game.shuffle(this.deck);
     }
 
     void SetWonder(){
-        //TODO
+        //TODO GUI
     }
 
-    public void ChooseCard() {
-        //TODO
+    public void makeMove() {
+        //TODO ChooseCard GUI
+        Card choosenCard = null;//GUI input
+        choosenCard.apply(this);
     }
+
+    public void takeCat(){
+        this.hasCat = true;
+    }
+
+    public void giveCat() {
+        this.hasCat = false;
+    }
+    public void addVictoryPoints(int vp){
+        this.victoryPoints += vp;
+    }
+
+    public Boolean addSymbolScience(ScienceCategory scienceCategory) {
+        this.symbolsScience.put(scienceCategory, symbolsScience.get(scienceCategory) + 1);
+        if(this.symbolsScience.containsValue(2)){
+            this.symbolsScience.put(scienceCategory, 0);
+            return true;
+        }else if(this.symbolsScience.values().stream().mapToInt(Integer::intValue).sum() == 3){
+            this.symbolsScience.replaceAll((key, value) -> 0);
+            return true;
+        }
+        return false;
+    }
+
+
+    public void takeToken() {
+        //TODO GUI
+    }
+    public boolean hasEnoughResources(){
+        //TODO
+        return false;
+    }
+
 }

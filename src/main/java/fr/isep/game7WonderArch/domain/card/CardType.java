@@ -14,7 +14,7 @@ public enum CardType {
 	// joker (mandatory replacing any material) 
 	CardMaterialGold("material:gold", Material.Gold, "card-material-gold-vizir.png"), //
 	
-	// Science cards
+	// Progress cards
 	CardScienceLaw("science:law", ScienceCategory.Law, "card-progress-law.png"), //
 	CardScienceMechanic("science:mechanic", ScienceCategory.Mechanic, "card-progress-mechanic.png"), //
 	CardScienceArchitect("science:architect", ScienceCategory.Architect, "card-progress-architect.png"), //
