@@ -12,14 +12,15 @@ import java.util.Map;
 
 public class Player {
 
-    Map<ScienceCategory, Integer> symbolsScience;
+    public Map<ScienceCategory, Integer> symbolsScience;
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
     private int victoryPoints;
     public Player(){
         SetWonder();
-        SetDeck();this.symbolsScience = new HashMap<>();
+        //SetDeck();
+        this.symbolsScience = new HashMap<>();
         this.symbolsScience.put(ScienceCategory.Law, 0);
         this.symbolsScience.put(ScienceCategory.Architect, 0);
         this.symbolsScience.put(ScienceCategory.Mechanic, 0);
@@ -87,13 +88,13 @@ public class Player {
     }
 
     public Boolean addSymbolScience(ScienceCategory scienceCategory) {
-        this.symbolsScience.replace(scienceCategory, symbolsScience.get(scienceCategory));
+        this.symbolsScience.put(scienceCategory, symbolsScience.get(scienceCategory) + 1);
         if(this.symbolsScience.containsValue(2)){
-            this.symbolsScience.replace(scienceCategory, 0);
+            this.symbolsScience.put(scienceCategory, 0);
             return true;
-            //TODO check:
         }else if(this.symbolsScience.values().stream().mapToInt(Integer::intValue).sum() == 3){
             this.symbolsScience.replaceAll((key, value) -> 0);
+            return true;
         }
         return false;
     }

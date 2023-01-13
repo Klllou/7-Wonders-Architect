@@ -9,7 +9,7 @@ import java.util.List;
 
 import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
 
-public class Game {//POSSIBLE ONLY ONE EXEMPLAR OF GAME TODO static (not for sure) or class for conflict tokens
+public class Game {
 
     int playersNumber;
     List<Player> players;
