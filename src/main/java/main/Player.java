@@ -3,19 +3,27 @@ package main;
 import fr.isep.game7WonderArch.domain.card.Card;
 import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
+import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import fr.isep.game7WonderArch.domain.wonder.Wonders;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Player {
 
+    Map<ScienceCategory, Integer> symbolsScience;
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
     private int victoryPoints;
     public Player(){
         SetWonder();
-        SetDeck();
+        SetDeck();this.symbolsScience = new HashMap<>();
+        this.symbolsScience.put(ScienceCategory.Law, 0);
+        this.symbolsScience.put(ScienceCategory.Architect, 0);
+        this.symbolsScience.put(ScienceCategory.Mechanic, 0);
     }
 
     void SetDeck(){
@@ -59,11 +67,11 @@ public class Player {
     }
 
     void SetWonder(){
-        //TODO
+        //TODO GUI
     }
 
     public void makeMove() {
-        //TODO ChooseCard
+        //TODO ChooseCard GUI
         Card choosenCard = null;//GUI input
         choosenCard.apply(this);
     }
@@ -77,5 +85,22 @@ public class Player {
     }
     public void addVictoryPoints(int vp){
         this.victoryPoints += vp;
+    }
+
+    public Boolean addSymbolScience(ScienceCategory scienceCategory) {
+        this.symbolsScience.replace(scienceCategory, symbolsScience.get(scienceCategory));
+        if(this.symbolsScience.containsValue(2)){
+            this.symbolsScience.replace(scienceCategory, 0);
+            return true;
+            //TODO check:
+        }else if(this.symbolsScience.values().stream().mapToInt(Integer::intValue).sum() == 3){
+            this.symbolsScience.replaceAll((key, value) -> 0);
+        }
+        return false;
+    }
+
+
+    public void takeToken() {
+        //TODO GUI
     }
 }
