@@ -9,7 +9,7 @@ import java.util.List;
 
 import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
 
-public class Game {
+public class Game {//POSSIBLE ONLY ONE EXEMPLAR OF GAME TODO static (not for sure) or class for conflict tokens
 
     int playersNumber;
     List<Player> players;
@@ -17,18 +17,24 @@ public class Game {
     ProgressTokens progressTokens;
     Boolean gameIsGoing;
 
+    public static ConflictTokens conflictTokens;
+
     Game(int playersNumber){
         this.playersNumber = playersNumber;
         this.players = new ArrayList<>();
         this.progressTokens = new ProgressTokens();
 
-        shuffleProgressToken(TOKENS);
+        shuffle(TOKENS);
         for(int i = 0; i < playersNumber; i++){
             players.add(new Player());
         }
         setCentralDeck();
-        shuffleCards(this.centralDeck);
+        shuffle(this.centralDeck);
+
+        conflictTokens = new ConflictTokens(playersNumber);
     }
+
+
 
     void setCentralDeck(){
         for(CardDecks.CardTypeQuantity a: CardDecks.deckCardQuantities_Extra){
@@ -47,12 +53,12 @@ public class Game {
         };
     }
 
-    static public void shuffleCards(List<Card> deck) {
+    static public void shuffle(List deck) {
         Collections.shuffle(deck);
     }
-    static public void shuffleProgressToken(List<ProgressToken> tokens) {
-        Collections.shuffle(tokens);
-    }
+//    static public void shuffleProgressToken(List<ProgressToken> tokens) {
+//        Collections.shuffle(tokens);
+//    }
 
     void Play(){
         while(gameIsGoing){
@@ -62,4 +68,6 @@ public class Game {
             }
         }
     }
+
+
 }

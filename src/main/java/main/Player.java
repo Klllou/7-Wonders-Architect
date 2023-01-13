@@ -6,7 +6,6 @@ import fr.isep.game7WonderArch.domain.card.CardDecks;
 import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import fr.isep.game7WonderArch.domain.wonder.Wonders;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,7 +62,7 @@ public class Player {
                 deck.add(Game.makeCard(a.cardType, cardBack));
             }
         }
-        Game.shuffleCards(this.deck);
+        Game.shuffle(this.deck);
     }
 
     void SetWonder(){
@@ -105,6 +104,7 @@ public class Player {
     }
     public boolean hasEnoughResources(){
         //TODO
+        return false;
     }
 
 }
