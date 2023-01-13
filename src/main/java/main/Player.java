@@ -1,3 +1,5 @@
+package main;
+
 import fr.isep.game7WonderArch.domain.card.Card;
 import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
@@ -9,8 +11,9 @@ public class Player {
 
     Wonders wonders;
     List<Card> deck;
-
-    Player(){
+    private Boolean hasCat;
+    private int victoryPoints;
+    public Player(){
         SetWonder();
         SetDeck();
     }
@@ -59,9 +62,20 @@ public class Player {
         //TODO
     }
 
-    public void ChooseCard() {
+    public void makeMove() {
         //TODO ChooseCard
         Card choosenCard = null;//GUI input
-        this.deck.add(choosenCard);
+        choosenCard.apply(this);
+    }
+
+    public void takeCat(){
+        this.hasCat = true;
+    }
+
+    public void giveCat() {
+        this.hasCat = false;
+    }
+    public void addVictoryPoints(int vp){
+        this.victoryPoints += vp;
     }
 }

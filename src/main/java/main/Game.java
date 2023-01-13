@@ -1,3 +1,5 @@
+package main;
+
 import fr.isep.game7WonderArch.domain.*;
 import fr.isep.game7WonderArch.domain.card.*;
 
@@ -33,7 +35,7 @@ public class Game {
         }
     }
 
-    static Card makeCard(CardType cardType, CardBack centralDeck) {
+    static public Card makeCard(CardType cardType, CardBack centralDeck) {
         return switch (cardType.cardCategory) {
             case MaterialCard -> new MaterialCard(cardType, centralDeck);
             case ProgressCard -> new ProgressCard(cardType, centralDeck);
@@ -42,7 +44,7 @@ public class Game {
         };
     }
 
-    static void shuffleCards(List<Card> deck) {
+    static public void shuffleCards(List<Card> deck) {
         Collections.shuffle(deck);
     }
 
@@ -50,7 +52,7 @@ public class Game {
         while(gameIsGoing){
             for(int i = 0; i < this.playersNumber; i++)
             {
-                players.get(i).ChooseCard();
+                players.get(i).makeMove();
             }
         }
     }
