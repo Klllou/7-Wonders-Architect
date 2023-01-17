@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="619.0" fitWidth="868.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../../../images/GraphicElements/fond-papier-texture-grungy-vintage_53876-103932.jpg.png" />
+            <Image url="@../../../images/GraphicElements/fond-papier-texture-grungy-vintage.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="86.0" layoutY="52.0" prefHeight="228.0" prefWidth="695.0">
@@ -26,9 +26,9 @@
       </AnchorPane>
       <ButtonBar buttonMinWidth="200.0" layoutX="294.0" layoutY="359.0" onMouseClicked="#OnPlayButtonClicked" prefHeight="97.0" prefWidth="262.0">
         <buttons>
-          <Button mnemonicParsing="false" onMouseClicked="#OnPlayButtonClicked" prefHeight="94.0" prefWidth="263.0" style="-fx-background-color: B28004; -fx-border-color: B28004; -fx-background-radius: 6px; -fx-border-radius: 6px;" text="Play now" textAlignment="CENTER" textFill="WHITE">
+          <Button mnemonicParsing="false" onMouseClicked="#OnPlayButtonClicked" prefHeight="94.0" prefWidth="263.0" style="-fx-background-radius: 6px; -fx-border-radius: 6px;" text="Play now" textAlignment="CENTER">
                <font>
-                  <Font name="Arial Black" size="38.0" />
+                  <Font name="Arial" size="38.0" />
                </font>
             </Button>
         </buttons>

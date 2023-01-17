@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="579.0" fitWidth="891.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../images/GraphicElements/fond-papier-texture-grungy-vintage_53876-103932.jpg.png" />
+            <Image url="@../../../images/GraphicElements/fond-papier-texture-grungy-vintage.png" />
          </image>
       </ImageView>
       <AnchorPane layoutX="255.0" layoutY="1.0" prefHeight="78.0" prefWidth="353.0">
@@ -25,7 +25,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Slider layoutX="223.0" layoutY="308.0" majorTickUnit="1.0" max="7.0" min="2.0" minorTickCount="0" onMouseDragged="#OnSliderMouseDragged" onMouseReleased="#OnSliderMouseReleased" prefHeight="97.0" prefWidth="427.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-background-color: FFFFFF; -fx-background-radius: 6px; -fx-border-radius: 6px;">
+      <Slider fx:id="playerNumber" layoutX="223.0" layoutY="308.0" majorTickUnit="1.0" max="7.0" min="2.0" minorTickCount="0" prefHeight="97.0" prefWidth="427.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-background-color: FFFFFF; -fx-background-radius: 6px; -fx-border-radius: 6px;">
          <effect>
             <ColorAdjust />
          </effect>

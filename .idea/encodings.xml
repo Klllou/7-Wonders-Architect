@@ -5,9 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/fr/isep/game7WonderArch/domain/ProgressToken.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/fr/isep/game7WonderArch/domain/wonder/Wonders.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/com/example/game7wondersarchitect/Play_now-view.fxml" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/images/GraphicElements/arc-common-logo-1630334595bVXyZ.png" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/images/GraphicElements/fond-papier-texture-grungy-vintage_53876-103932.jpg.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/example/game7wondersarchitect/Play_now-view.fxml" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />
   </component>
 </project>
