@@ -12,6 +12,15 @@ import java.io.IOException;
 
 public class NumberOfPlayersController {
     private int sliderValue;
+    public void OnSliderMouseDragged(MouseEvent event) throws IOException {
+
+    }
+
+
+
+    public void OnSliderMouseReleased(MouseEvent event) throws IOException {
+
+    }
 
     public void OnOKButtonMouseClicked(MouseEvent event) throws IOException {
         getPlayerNumber();

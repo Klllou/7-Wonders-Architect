@@ -22,9 +22,10 @@ public class PlayNowController {
     }
 
     public void OnPlayButtonClicked(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/ressources/com/example/game7wondersarchitect/NumberOfPlayers-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NumberOfPlayers-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
