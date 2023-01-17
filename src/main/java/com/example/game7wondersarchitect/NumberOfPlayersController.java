@@ -2,6 +2,8 @@ package com.example.game7wondersarchitect;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Slider;
@@ -9,22 +11,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class NumberOfPlayersController {
     private int sliderValue;
-    public void OnSliderMouseDragged(MouseEvent event) throws IOException {
-
-    }
-
-
-
-    public void OnSliderMouseReleased(MouseEvent event) throws IOException {
-
-    }
 
     public void OnOKButtonMouseClicked(MouseEvent event) throws IOException {
         getPlayerNumber();
-        System.out.println(sliderValue);
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourWonder-view.fxml")));
+        stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -38,4 +38,25 @@ public class NumberOfPlayersController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+    public void OnRhodesButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnOlympieButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnHalicarnasseButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnÉphèseButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnGizehButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnBabyloneButtonMouseClicked(MouseEvent event) {
+    }
+
+    public void OnAlexandrieButtonMouseClicked(MouseEvent event) {
+    }
 }
