@@ -12,7 +12,7 @@ import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
 public class Game {
 
     int playersNumber;
-    List<Player> players;
+    private static List<Player> players = new ArrayList<>();;
     List<Card> centralDeck;
     ProgressTokens progressTokens;
     Boolean gameIsGoing;
@@ -21,19 +21,21 @@ public class Game {
 
     Game(int playersNumber){
         this.playersNumber = playersNumber;
-        this.players = new ArrayList<>();
         this.progressTokens = new ProgressTokens();
 
         shuffle(TOKENS);
-        for(int i = 0; i < playersNumber; i++){
-            players.add(new Player());
-        }
+        /*for(int i = 0; i < playersNumber; i++){
+            players.add(new Player(playerName));
+        }*/
         setCentralDeck();
         shuffle(this.centralDeck);
 
         conflictTokens = new ConflictTokens(playersNumber);
     }
 
+    public static void addPlayer(Player newPlayer){
+        players.add(newPlayer);
+    }
 
 
     void setCentralDeck(){

@@ -9,7 +9,7 @@ public class UnitTests {
 
     @Test
     public void testAddSymbolScience() {
-        Player player = new Player();
+        Player player = new Player("Fares", 42);
         System.out.println(player.symbolsScience);
         Assert.assertFalse(player.addSymbolScience(ScienceCategory.Law));
         System.out.println(player.symbolsScience);

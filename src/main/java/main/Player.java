@@ -5,6 +5,7 @@ import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
 import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import fr.isep.game7WonderArch.domain.wonder.Wonders;
+import javafx.scene.control.TextField;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,11 +14,15 @@ import java.util.Map;
 public class Player {
 
     public Map<ScienceCategory, Integer> symbolsScience;
+    private String name;
+    private int age;
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
     private int victoryPoints;
-    public Player(){
+    public Player(String playerName, int playerAge){
+        name = playerName;
+        age = playerAge;
         SetWonder();
         //SetDeck();
         this.symbolsScience = new HashMap<>();
