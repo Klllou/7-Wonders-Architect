@@ -11,30 +11,53 @@ import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
 
 public class Game {
 
-    int playersNumber;
-    private static List<Player> players = new ArrayList<>();;
+    static int playersNumber;
+    static public List<Player> players;
     List<Card> centralDeck;
-    ProgressTokens progressTokens;
+    List<ProgressToken> progressTokens;
     Boolean gameIsGoing;
 
     public static ConflictTokens conflictTokens;
 
-    Game(int playersNumber){
-        this.playersNumber = playersNumber;
-        this.progressTokens = new ProgressTokens();
+    public Game(int playersNumber){
+        Game.playersNumber = playersNumber;
+        players = new ArrayList<>();
+        this.progressTokens = ProgressTokens.TOKENS;
 
-        shuffle(TOKENS);
-        /*for(int i = 0; i < playersNumber; i++){
-            players.add(new Player(playerName));
-        }*/
-        setCentralDeck();
-        shuffle(this.centralDeck);
+        //shuffleProgressToken(TOKENS);TODO doesn't work
+        for(int i = 0; i < playersNumber; i++){
+            players.add(new Player());
+        }
+        //setCentralDeck();TODO doesn't work
+        //shuffleDeck(this.centralDeck);TODO doesn't work
 
         conflictTokens = new ConflictTokens(playersNumber);
     }
 
-    public static void addPlayer(Player newPlayer){
-        players.add(newPlayer);
+    public static void doWar() {
+        for(int i = 1; i < playersNumber; i++ ){
+
+            if(players.get(i).getShields() > players.get(i-1).getShields()){
+                players.get(i).takeVictoryToken();
+            }
+            else{
+                players.get(i-1).takeVictoryToken();
+            }
+
+        }
+
+        if(players.get(playersNumber-1).getShields() > players.get(0).getShields()){
+            players.get(playersNumber-1).takeVictoryToken();
+        }
+        else{
+            players.get(0).takeVictoryToken();
+        }
+    }
+
+    public static void end() {
+        Game.players = null;
+        Game.playersNumber = 0;
+        Game.conflictTokens = null;
     }
 
 
@@ -55,16 +78,16 @@ public class Game {
         };
     }
 
-    static public void shuffle(List deck) {
+    static public void shuffleDeck(List<Card> deck) {
         Collections.shuffle(deck);
     }
-//    static public void shuffleProgressToken(List<ProgressToken> tokens) {
-//        Collections.shuffle(tokens);
-//    }
+    static public void shuffleProgressToken(List<ProgressToken> tokens) {
+        Collections.shuffle(tokens);
+    }
 
     void Play(){
         while(gameIsGoing){
-            for(int i = 0; i < this.playersNumber; i++)
+            for(int i = 0; i < playersNumber; i++)
             {
                 players.get(i).makeMove();
             }

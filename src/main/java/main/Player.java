@@ -5,7 +5,6 @@ import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
 import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import fr.isep.game7WonderArch.domain.wonder.Wonders;
-import javafx.scene.control.TextField;
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,15 +13,13 @@ import java.util.Map;
 public class Player {
 
     public Map<ScienceCategory, Integer> symbolsScience;
-    private String name;
-    private int age;
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
-    private int victoryPoints;
-    public Player(String playerName, int playerAge){
-        name = playerName;
-        age = playerAge;
+    public int victoryPoints;
+    private int shieldsWithHorns;
+    private int shieldsWithoutHorns;
+    public Player(){
         SetWonder();
         //SetDeck();
         this.symbolsScience = new HashMap<>();
@@ -68,7 +65,7 @@ public class Player {
                 deck.add(Game.makeCard(a.cardType, cardBack));
             }
         }
-        Game.shuffle(this.deck);
+        Game.shuffleDeck(this.deck);
     }
 
     void SetWonder(){
@@ -113,4 +110,21 @@ public class Player {
         return false;
     }
 
+    public void addShields(boolean withoutHorns) {
+        if(withoutHorns){
+            this.shieldsWithoutHorns++;
+        }
+        else{
+            this.shieldsWithHorns++;
+        }
+    }
+
+
+    public int getShields(){
+        return (this.shieldsWithHorns + this.shieldsWithoutHorns);
+    }
+
+    public void takeVictoryToken() {
+        this.victoryPoints += 3;
+    }
 }
