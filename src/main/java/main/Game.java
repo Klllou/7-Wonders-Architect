@@ -25,13 +25,30 @@ public class Game {
         this.progressTokens = ProgressTokens.TOKENS;
 
         //shuffleProgressToken(TOKENS);TODO doesn't work
-        for(int i = 0; i < playersNumber; i++){
-            players.add(new Player());
-        }
+
+//        for(int i = 0; i < playersNumber; i++){
+//            players.add(new Player(getPlayerName(), getPlayerAge()));
+//        }
+
         //setCentralDeck();TODO doesn't work
         //shuffleDeck(this.centralDeck);TODO doesn't work
 
         conflictTokens = new ConflictTokens(playersNumber);
+    }
+
+    private int getPlayerAge() {
+        //TODO GUI
+        return 0;
+    }
+
+    private String getPlayerName() {
+        //TODO GUI
+        return "temporary name";
+    }
+
+
+    public static void addPlayer(Player newPlayer){
+        players.add(newPlayer);
     }
 
     public static void doWar() {

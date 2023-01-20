@@ -45,6 +45,9 @@ public class UnitTests {
     @Test
     public void testDoWar() {
         Game game = new Game(4);
+        for (int i = 0; i < 4; i++){
+            Game.addPlayer(new Player("", 0));
+        }
 
         for(int i = 0; i < 4; i++){
             Game.players.get(0).addShields(false);
@@ -68,6 +71,9 @@ public class UnitTests {
 
         Game.end();
         game = new Game(5);
+        for (int i = 0; i < 5; i++){
+            Game.addPlayer(new Player("", 0));
+        }
 
         for(int i = 0; i < 4; i++){
             Game.players.get(0).addShields(false);
