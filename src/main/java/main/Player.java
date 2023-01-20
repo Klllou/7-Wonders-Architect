@@ -19,7 +19,9 @@ public class Player {
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
-    private int victoryPoints;
+    public int victoryPoints;
+    private int shieldsWithHorns;
+    private int shieldsWithoutHorns;
     public Player(String playerName, int playerAge){
         name = playerName;
         age = playerAge;
@@ -68,7 +70,7 @@ public class Player {
                 deck.add(Game.makeCard(a.cardType, cardBack));
             }
         }
-        Game.shuffle(this.deck);
+        Game.shuffleDeck(this.deck);
     }
 
     void SetWonder(){
@@ -113,4 +115,21 @@ public class Player {
         return false;
     }
 
+    public void addShields(boolean withoutHorns) {
+        if(withoutHorns){
+            this.shieldsWithoutHorns++;
+        }
+        else{
+            this.shieldsWithHorns++;
+        }
+    }
+
+
+    public int getShields(){
+        return (this.shieldsWithHorns + this.shieldsWithoutHorns);
+    }
+
+    public void takeVictoryToken() {
+        this.victoryPoints += 3;
+    }
 }

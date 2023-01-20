@@ -12,9 +12,10 @@ public class WarCard extends Card{
 
     @Override
     public void apply(Player player) {
+        player.addShields(this.hornsNumber == 0);
         Game.conflictTokens.flipConflictTokens(this.hornsNumber);
         if(Game.conflictTokens.allConflictTokensFlipped()){
-            //TODO start the war
+            Game.doWar();
         }
     }
 }

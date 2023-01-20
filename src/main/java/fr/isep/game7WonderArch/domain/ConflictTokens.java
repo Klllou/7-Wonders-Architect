@@ -1,10 +1,10 @@
-package main;
+package fr.isep.game7WonderArch.domain;
 
 public class ConflictTokens {
     int conflictTokensNumber;
     int flippedConflictTokensNumber;
 
-    ConflictTokens(int n){
+    public ConflictTokens(int n){
         conflictTokensNumber = n;
         flippedConflictTokensNumber = 0;
         if(n == 2) conflictTokensNumber++;
@@ -12,7 +12,8 @@ public class ConflictTokens {
     }
 
     public boolean allConflictTokensFlipped() {
-        if(conflictTokensNumber - flippedConflictTokensNumber == 0){
+        if(conflictTokensNumber == flippedConflictTokensNumber){
+            this.flippedConflictTokensNumber = 0;
             return true;
         }
         return false;
@@ -20,5 +21,9 @@ public class ConflictTokens {
 
     public void flipConflictTokens(int n){
         flippedConflictTokensNumber += n;
+        if(flippedConflictTokensNumber > this.conflictTokensNumber)
+        {
+            flippedConflictTokensNumber = this.conflictTokensNumber;
+        }
     }
 }
