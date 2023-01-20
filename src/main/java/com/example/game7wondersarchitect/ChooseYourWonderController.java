@@ -16,7 +16,7 @@ public class ChooseYourWonderController {
     public void OnRhodesButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Rhodes");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -27,7 +27,7 @@ public class ChooseYourWonderController {
     public void OnOlympieButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Olympie");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -38,7 +38,7 @@ public class ChooseYourWonderController {
     public void OnHalicarnasseButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Halicarnasse");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -49,7 +49,7 @@ public class ChooseYourWonderController {
     public void OnÉphèseButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Éphèse");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -60,7 +60,7 @@ public class ChooseYourWonderController {
     public void OnGizehButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Gizeh");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -71,7 +71,7 @@ public class ChooseYourWonderController {
     public void OnBabyloneButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Babylone");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);
@@ -82,7 +82,7 @@ public class ChooseYourWonderController {
     public void OnAlexandrieButtonMouseClicked(MouseEvent event) throws IOException {
         setChosenWonder("Alexandrie");
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("NamePlayer-view.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ChooseYourNameAndAge-view.fxml")));
         stage =(Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setResizable(false);

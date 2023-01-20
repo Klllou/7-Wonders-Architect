@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class NumberOfPlayersController {
-    private int sliderValue;
+    private static int sliderValue;
 
     public void OnOKButtonMouseClicked(MouseEvent event) throws IOException {
         getPlayerNumber();
@@ -33,6 +33,16 @@ public class NumberOfPlayersController {
     public void getPlayerNumber (){
         sliderValue = (int) playerNumber.getValue();
 
+    }
+
+    public static int getSliderValue(){
+        return sliderValue;
+    }
+
+    //Fonction qui sert à décrémenter le nombre de joueurs
+    //pour afficher la vue ChooseYourNameAndAge en fonction du nombre de joueurs
+    public void playerDecrementing(){
+        sliderValue = sliderValue - 1;
     }
 
     private Stage stage;
