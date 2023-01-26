@@ -13,7 +13,7 @@ public class Game {
 
     static int playersNumber;
     static public List<Player> players;
-    List<Card> centralDeck;
+    public List<Card> centralDeck;
     List<ProgressToken> progressTokens;
     Boolean gameIsGoing;
 
@@ -24,14 +24,12 @@ public class Game {
         players = new ArrayList<>();
         this.progressTokens = ProgressTokens.TOKENS;
 
-        //shuffleProgressToken(TOKENS);TODO doesn't work
-
 //        for(int i = 0; i < playersNumber; i++){
 //            players.add(new Player(getPlayerName(), getPlayerAge()));
 //        }
 
-        //setCentralDeck();TODO doesn't work
-        //shuffleDeck(this.centralDeck);TODO doesn't work
+        setCentralDeck();
+        shuffleDeck(this.centralDeck);
 
         conflictTokens = new ConflictTokens(playersNumber);
     }
@@ -78,7 +76,8 @@ public class Game {
     }
 
 
-    void setCentralDeck(){
+    public void setCentralDeck(){
+        this.centralDeck = new ArrayList<>();
         for(CardDecks.CardTypeQuantity a: CardDecks.deckCardQuantities_Extra){
             for(int i = 0; i < a.quantity; i++){
                 centralDeck.add(makeCard(a.cardType, CardBack.CentralDeck));
@@ -94,22 +93,44 @@ public class Game {
             case PoliticCard -> new PoliticCard(cardType, centralDeck);
         };
     }
-
     static public void shuffleDeck(List<Card> deck) {
         Collections.shuffle(deck);
     }
-    static public void shuffleProgressToken(List<ProgressToken> tokens) {
-        Collections.shuffle(tokens);
-    }
 
-    void Play(){
+    public void play(){
+        gameIsGoing = true;
+
+        //TODO The youngest player start the game
+        List t = players.subList(getIndexOfTheYoungest(), playersNumber);
+        t.addAll(players.subList(0, getIndexOfTheYoungest()));
+        players = t;
+
         while(gameIsGoing){
             for(int i = 0; i < playersNumber; i++)
             {
-                players.get(i).makeMove();
+                players.get(i).makeMove(this, i);
             }
+            //TODO gameIsGoing = false
         }
+        end();
     }
 
+    private int getIndexOfTheYoungest() {
+        int min = 100;
+        int res = -1;
+        for(int i = 0; i < playersNumber; i++){
+            if(players.get(i).age < min){
+                min = players.get(i).age;
+                res = i;
+            }
+        }
+        return res;
+    }
 
+    public static Card getFirstCard(List<Card> deck){
+        if (deck.size() == 0){
+            return null;
+        }
+        return deck.remove(0);
+    }
 }

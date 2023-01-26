@@ -1,5 +1,6 @@
 package unitTests;
 
+import fr.isep.game7WonderArch.domain.ProgressToken;
 import fr.isep.game7WonderArch.domain.ProgressTokens;
 import fr.isep.game7WonderArch.domain.card.ScienceCategory;
 import main.Game;
@@ -8,10 +9,21 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.*;
+//import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import static fr.isep.game7WonderArch.domain.ProgressTokens.TOKENS;
 
 public class UnitTests {
+
+    @Test
+    public void testPlay() {
+        Game game = new Game(4);
+        setPlayers(4);
+        game.play();
+    }
 
     @Test
     public void testAddSymbolScience() {
@@ -42,12 +54,16 @@ public class UnitTests {
 
     }
 
+    void setPlayers(int n){
+        for (int i = 0; i < n; i++){
+            Game.addPlayer(new Player("", 0));
+        }
+    }
+
     @Test
     public void testDoWar() {
         Game game = new Game(4);
-        for (int i = 0; i < 4; i++){
-            Game.addPlayer(new Player("", 0));
-        }
+        setPlayers(4);
 
         for(int i = 0; i < 4; i++){
             Game.players.get(0).addShields(false);
@@ -71,9 +87,7 @@ public class UnitTests {
 
         Game.end();
         game = new Game(5);
-        for (int i = 0; i < 5; i++){
-            Game.addPlayer(new Player("", 0));
-        }
+        setPlayers(5);
 
         for(int i = 0; i < 4; i++){
             Game.players.get(0).addShields(false);

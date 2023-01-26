@@ -90,4 +90,8 @@ public enum ProgressToken {
 		this.imageResource = "images/tokens-progress/" + imageResource;
 	}
 
+    public static void apply() {
+		//TODO GUI show the effect
+		//TODO
+    }
 }

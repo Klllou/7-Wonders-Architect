@@ -1,5 +1,6 @@
 package main;
 
+import fr.isep.game7WonderArch.domain.ProgressToken;
 import fr.isep.game7WonderArch.domain.card.Card;
 import fr.isep.game7WonderArch.domain.card.CardBack;
 import fr.isep.game7WonderArch.domain.card.CardDecks;
@@ -15,7 +16,7 @@ public class Player {
 
     public Map<ScienceCategory, Integer> symbolsScience;
     private String name;
-    private int age;
+    public int age;
     Wonders wonders;
     List<Card> deck;
     private Boolean hasCat;
@@ -23,6 +24,7 @@ public class Player {
     private int shieldsWithHorns;
     private int shieldsWithoutHorns;
     public Player(String playerName, int playerAge){
+        this.hasCat = false;
         name = playerName;
         age = playerAge;
         SetWonder();
@@ -77,10 +79,20 @@ public class Player {
         //TODO GUI
     }
 
-    public void makeMove() {
+    public void makeMove(Game game, int currentPlayer) {
+
+        checkCardsIfHasCat();
         //TODO ChooseCard GUI
-        Card choosenCard = null;//GUI input
-        choosenCard.apply(this);
+        Card chosenCard = Game.getFirstCard(game.centralDeck); //card from central deck
+        //chosenCard = Game.getFirstCard(this.deck); //card from the left deck
+        //chosenCard = Game.getFirstCard(players.get(currentPlayer + 1).deck); //card from the right deck
+
+        if (chosenCard == null){
+            //TODO GUI (inform user that there are no cards in the deck anymore)
+        }
+        else{
+            chosenCard.apply(this);
+        }
     }
 
     public void takeCat(){
@@ -109,6 +121,7 @@ public class Player {
 
     public void takeToken() {
         //TODO GUI
+        ProgressToken.apply();
     }
     public boolean hasEnoughResources(){
         //TODO
@@ -131,5 +144,15 @@ public class Player {
 
     public void takeVictoryToken() {
         this.victoryPoints += 3;
+    }
+
+    private void checkCardsIfHasCat(){
+        if(this.hasCat){
+            //TODO GUI
+        }
+    }
+
+    Card getFirstCard(){
+        return this.deck.remove(0);
     }
 }
