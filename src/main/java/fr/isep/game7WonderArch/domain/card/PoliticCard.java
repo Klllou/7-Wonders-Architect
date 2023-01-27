@@ -11,6 +11,9 @@ public class  PoliticCard extends Card {
         this.hasCat = type.cat;
     }
 
+    ////Fonction qui permet d'appliquer les effets des PoliticCard,
+    // Ajoute des points de Victoire, ou lui permet de prendre le "chat" qui lui permet alors de voir
+    // des cartes dans les pioches
     @Override
     public void apply(Player player) {
         if(this.hasCat){

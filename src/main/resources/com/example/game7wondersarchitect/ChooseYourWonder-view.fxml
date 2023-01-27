@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game7wondersarchitect.ChooseYourWonderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="868.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.game7wondersarchitect.ChooseYourWonderController">
    <children>
       <ImageView fitHeight="579.0" fitWidth="891.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -54,12 +54,12 @@
             <Font name="Futura Medium" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="29.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnRhodesButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Rhodes" />
-      <Button layoutX="150.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnOlympieButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Olympie" />
-      <Button layoutX="270.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnHalicarnasseButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Halicarnasse" />
-      <Button layoutX="391.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnÉphèseButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Éphèse" />
-      <Button layoutX="512.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnGizehButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Gizeh" />
-      <Button layoutX="633.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnBabyloneButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Babylone" />
-      <Button layoutX="753.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnAlexandrieButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Alexandrie" />
+      <Button fx:id="Rhodes" layoutX="29.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnRhodesButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Rhodes" />
+      <Button fx:id="Olympie" layoutX="150.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnOlympieButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Olympie" />
+      <Button fx:id="Halicarnasse" layoutX="270.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnHalicarnasseButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Halicarnasse" />
+      <Button fx:id="Ephese" layoutX="391.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnÉphèseButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Éphèse" />
+      <Button fx:id="Gizeh" layoutX="512.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnGizehButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Gizeh" />
+      <Button fx:id="Babylone" layoutX="633.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnBabyloneButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Babylone" />
+      <Button fx:id="Alexandrie" layoutX="753.0" layoutY="507.0" mnemonicParsing="false" onMouseClicked="#OnAlexandrieButtonMouseClicked" prefHeight="24.0" prefWidth="88.0" text="Alexandrie" />
    </children>
 </AnchorPane>

@@ -60,7 +60,7 @@ public class PlayerNameController implements Initializable {
     }
 
     private String getPlayerName() {
-         return playerName.getText();
+        return playerName.getText();
     }
 
     //pour le spinner qui récupère l'âge :

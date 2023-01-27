@@ -5,18 +5,31 @@ import java.util.Map;
 
 public abstract class Wonder {
 
+    public String name;
     int layersAmount;
-    List<Map<Integer, Boolean>> parts;
+    public List<Map<Integer, Integer>> parts;
+    int layer;
 
-    Wonder(int layersAmount){
-        this.layersAmount = layersAmount;
-        SetLayers();
+    Wonder(String name, int layersAmount){
+        this.name = name;
+        SetLayers(layersAmount);
+
     }
 
-//    public getLayer(){
-//        //TODO
-//    }
-    protected abstract void SetLayers();
+    public int getLayer(){
+        return this.layer;
+    }
 
+    //On définit le nombre de ressources nécessaire à la création de chaque niveau des Merveilles, ainsi que
+    //Le nombre de "part" de la Merveille il y a par étage
+    protected abstract void SetLayers(int layersAmount);
+
+    public void SetCurrentLayer(){
+        if (parts.get(0).isEmpty()){
+            parts.remove(0);
+        }
+
+
+    }
 
 }

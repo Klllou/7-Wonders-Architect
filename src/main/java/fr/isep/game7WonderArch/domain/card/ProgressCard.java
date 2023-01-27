@@ -9,6 +9,8 @@ public class ProgressCard extends Card{
         scienceCategory = type.scienceCategory;
     }
 
+    //Si le joueur possède suffisament de SymbolScience, le joeur peut choisir un ProgressToken.
+    // Il perd alors ses SymbolScience
     @Override
     public void apply(Player player) {
         if(player.addSymbolScience(this.scienceCategory)){

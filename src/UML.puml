@@ -8,17 +8,65 @@ class Player
 
 
 package fr.isep.game7WonderArch.domain {
-enum Wonders
+enum Wonders {
+Alexandrie
+Olympie
+Rhodes
+Gizeh
+Halicarnasse
+Babylone
+Ephese
+}
 abstract Wonder
 abstract Card
-enum CardBack
-enum CardCategory
+enum CardBack {
+Alexandrie
+Babylone
+Ephese
+Gizeh
+Halicarnasse
+Olympie
+Rhodes
+CentralDeck
+}
+enum CardCategory{
+PoliticCard
+ProgressCard
+MaterialCard
+WarCard
+}
 class CardDecks
 enum CardType
-enum Material
-enum ProgressToken
+enum Material{
+Wood
+Brick
+Glass
+Gold
+Stone
+Paper
+}
+enum ProgressToken {
+Urbanisme
+ArtsAndCrafts
+Jewelry
+Science
+Propaganda
+Architecture
+Economy
+Ingeniery
+Tactic
+Decoration
+Politic
+Strategy
+Education
+Culture
+}
 class ProgressTokens
-enum ScienceCategory
+enum ScienceCategory {
+Law
+Mechanic
+Architect
+}
 class PoliticCard
 class ProgressCard
 class MaterialCard
@@ -39,8 +87,8 @@ Card <|-- PoliticCard
 Card <|-- WarCard
 Wonder --- Wonders
 Card --- CardBack
-Card --- CardType
-CardType -- CardCategory
+Card --- CardCategory
+CardCategory -- CardType
 
 Wonder <|-- Alexandrie
 Wonder <|-- Babylone
@@ -51,28 +99,41 @@ Wonder <|-- Olympie
 Wonder <|-- Rhodes
 
 Player *-- Card
-Player *--- Wonder
-
+Player *---- Wonder
+Game *--- ConflictTokens
 }
 Game *-- Player
 Game *-- Card
 Game *-- ProgressTokens
 Player *-- ProgressTokens
-CardType *--- CardDecks
-Game o--r InputParser
+CardDecks *--- Card
+Player *-- CardDecks
+Game *-- CardDecks
 ProgressTokens --- ProgressToken
 MaterialCard -- Material
 ProgressCard -- ScienceCategory
 
-package utils {
-interface InputParser
-class ControleParser
-class GUIParser
+class ConflictTokens
 
-InputParser <|.. ControleParser
-InputParser <|.. GUIParser
+
+
+package com.example.game7wondersarchitect {
+class HelloApplication
+class ChooseYourWonderController
+class NumberOfPlayerController
+class PlayerNameController
+class PlayNowController
+
+Game -- PlayNowController
+Player -- PlayerNameController
+Game --- NumberOfPlayerController
+Player -- ChooseYourWonderController
+HelloApplication -- Game
+
 
 }
+
+
 
 
 @enduml

@@ -1,12 +1,14 @@
 package com.example.game7wondersarchitect;
 
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import main.Game;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -90,14 +92,15 @@ public class ChooseYourWonderController {
         stage.show();
     }
 
-    private static String chosenWonder;
+//    private static String chosenWonder;
 
-    public static String getChosenWonder(String wonder) {
-        return chosenWonder;
-    }
+//    public static String getChosenWonder() {
+//        Game.players.get(Game.players.size()).setWonder(chosenWonder);
+//        return chosenWonder;
+//    }
 
     public void setChosenWonder(String wonder){
-        chosenWonder = wonder;
+        Game.players.get(Game.players.size()).setWonder(wonder);
     }
 
     private Stage stage;

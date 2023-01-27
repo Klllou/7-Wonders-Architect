@@ -1,22 +1,27 @@
 package fr.isep.game7WonderArch.domain.wonder;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Ephese extends Wonder{
-    Ephese(int layersAmount) {
-        super(layersAmount);
+    public Ephese() {
+        super( "Ephese",3);
+
     }
 
     @Override
-    protected void SetLayers() {
-        for (int i = 0; i< this.layersAmount; i++){
+    protected void SetLayers(int layersAmount) {
+        this.parts = new ArrayList<>();
+        for (int i = 0; i< layersAmount; i++){
             this.parts.add(new HashMap<>());
         }
-        parts.get(0).put(2, false);
-        parts.get(1).put(2, true);
-        parts.get(1).put(3, true);
-        parts.get(1).put(3, false);
-        parts.get(2).put(4, false);
+        parts.get(0).put(0,2);
+
+        parts.get(1).put(1,2);
+        parts.get(1).put(2,3);
+        parts.get(1).put(0,3);
+
+        parts.get(2).put(0,4);
     }
 }
 

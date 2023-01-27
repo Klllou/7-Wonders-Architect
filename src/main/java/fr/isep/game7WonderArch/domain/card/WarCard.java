@@ -10,6 +10,8 @@ public class WarCard extends Card{
         this.hornsNumber = type.hornCount;
     }
 
+    //Le joueur obtient un bouclier, retourne un ConflictTokens. Si les trois conflictTokens sont retournés : doWar
+    // Après le Combat, Les joueurs perdent leur boucliers s'il y avait une Corne de combat.
     @Override
     public void apply(Player player) {
         player.addShields(this.hornsNumber == 0);
